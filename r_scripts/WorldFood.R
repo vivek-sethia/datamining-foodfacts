@@ -86,14 +86,13 @@ WorldFood$countries[WorldFood$countries == "Hong Kong"] <- "en:HK"
 WorldFood$countries[WorldFood$countries == "Hong Kong,China"] <- "en:HK, en:CN"
 WorldFood$countries[WorldFood$countries == "Lebanon"] <- "en:LB"
 
-
 #wordcloud allergens
 library(NLP)
 library(tm)
 library(SnowballC)
 library(wordcloud)
 
-wc_allergens <- Corpus(VectorSource(jeopQ$Question))
+wc_allergens <- Corpus(VectorSource(WorldFood$allergens))
 wc_allergens <- tm_map(wc_allergens, PlainTextDocument)
 wc_allergens <- tm_map(wc_allergens, removePunctuation)
 wc_allergens <- tm_map(wc_allergens, removeWords, stopwords('english'))
