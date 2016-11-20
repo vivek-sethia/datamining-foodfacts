@@ -96,5 +96,5 @@ wc_allergens <- Corpus(VectorSource(WorldFood$allergens))
 wc_allergens <- tm_map(wc_allergens, PlainTextDocument)
 wc_allergens <- tm_map(wc_allergens, removePunctuation)
 wc_allergens <- tm_map(wc_allergens, removeWords, stopwords('english'))
-wordcloud(jeopCorpus, max.words = 100, random.order = FALSE)
+wordcloud(wc_allergens, max.words = 100, random.order = FALSE)
 
